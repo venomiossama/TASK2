@@ -38,7 +38,7 @@ namespace TASK2
                 Console.WriteLine("B - Print Odd Numbers");
                 Console.WriteLine("Q - Quit");
                 user = char.ToUpper(Console.ReadKey().KeyChar);
-                Console.WriteLine(); 
+                Console.WriteLine();
 
 
                 switch (user)
@@ -52,7 +52,7 @@ namespace TASK2
                         {
                             for (int i = 0; i < countnum; i++)
                             {
-                                Console.WriteLine(numbers[i]);
+                                Console.WriteLine($"[ {numbers[i]} ]");
                             }
                         }
                         break;
@@ -62,29 +62,30 @@ namespace TASK2
                             check = false;
                             Console.WriteLine("Add a Number");
                             newnum = Convert.ToInt32(Console.ReadLine());
-                            for (int i = 0 ;i < countnum ; i++) {
-                                if (numbers[i] == newnum) 
+                            for (int i = 0; i < countnum; i++)
+                            {
+                                if (numbers[i] == newnum)
                                 {
                                     check = true;
-                            
+
                                     break;
                                 }
                             }
-                                if (check)
-                                {
+                            if (check)
+                            {
                                 Console.WriteLine("The Number You Enterd Is Already Exist!");
 
-                                }
-                                else
-                            { 
-                            numbers[countnum] = newnum;
-                            countnum++;
-                            Console.WriteLine("The Number You Entered Was Added Succefully");
+                            }
+                            else
+                            {
+                                numbers[countnum] = newnum;
+                                countnum++;
+                                Console.WriteLine("The Number You Entered Was Added Succefully");
                             }
                         }
                         else
                         {
-                            Console.WriteLine("The List Is Full");
+                            Console.WriteLine("The List Is Full!");
                         }
 
                         break;
@@ -96,12 +97,12 @@ namespace TASK2
                         }
                         else
                         {
-                            double sum = 0; 
+                            double sum = 0;
                             for (int i = 0; i < countnum; i++)
                             {
                                 sum += numbers[i];
                             }
-                            mean = sum / countnum; 
+                            mean = sum / countnum;
                             Console.WriteLine($"The Mean Is {mean}");
                         }
                         break;
@@ -113,17 +114,18 @@ namespace TASK2
                         }
                         else
                         {
-                         
-                           smallnum = numbers[0];
+
+                            smallnum = numbers[0];
                             for (int i = 1; i < countnum; i++)
                             {
-                                if (numbers[i] < smallnum) { 
-                               smallnum = numbers[i];
+                                if (numbers[i] < smallnum)
+                                {
+                                    smallnum = numbers[i];
                                 }
                             }
                             Console.WriteLine($"The Smallest Number Is {smallnum}");
                         }
-                        
+
                         break;
 
                     case 'L':
@@ -147,37 +149,37 @@ namespace TASK2
                         break;
 
                     case 'F':
-                        if(countnum == 0)
+                        if (countnum == 0)
                         {
                             Console.WriteLine("The List Is Empty!");
                         }
-                        
+
                         else
                         {
-                        Console.WriteLine("Enter a Number You Want to Search for!");
-                        int findnum = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("The Number Is Exist!");
+                            Console.WriteLine("Enter a Number You Want to Search for!");
+                            int findnum = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"The Number {findnum} Is Exist!");
                             find = false;
-                            for (int i = 0;i < countnum;i++)
+                            for (int i = 0; i < countnum; i++)
                             {
-                                if(numbers[i] == findnum)
+                                if (numbers[i] == findnum)
                                 {
                                     find = true;
                                     break;
                                 }
-                                
+
                             }
                             if (find)
                             {
-                                    Console.WriteLine($"The Number {findnum} Is Exist");
+                                Console.WriteLine($"The Number {findnum} Is Exist");
                                 break;
                             }
                             else
                             {
-                                    Console.WriteLine($"The Number {findnum} Is Not Exist");
+                                Console.WriteLine($"The Number {findnum} Is Not Exist!");
 
                             }
-                           
+
 
                         }
                         break;
@@ -186,13 +188,30 @@ namespace TASK2
                         countnum = 0;
                         Console.WriteLine("List Cleared");
                         break;
-                        //دي فكرة من عندي للبونص
+                    //دي فكرة من عندي للبونص
                     case 'B':
-                        for (int i = 0; i< countnum; i++) { 
-                        if (numbers[i] %2 !=0)
+                        if (countnum == 0)
                         {
-                            Console.WriteLine(numbers[i]);
+
+                                Console.WriteLine("The List Is Empty!");
+                           
                         }
+
+                        else
+                        { 
+                            bool oddnums = false;
+                        for (int i = 0; i < countnum; i++)
+                        {
+                            if (numbers[i] % 2 != 0)
+                            {
+                                Console.WriteLine($"[ {numbers[i]} ]");
+                                    oddnums = true;
+                            }
+                        }
+                            if (!oddnums)
+                            {
+                                Console.WriteLine("There Is No Odd Numbers!");
+                            }
                         }
                         break;
 
@@ -210,12 +229,12 @@ namespace TASK2
 
 
 
-                Console.WriteLine("---------------- Task2 Ended ----------------");
+            Console.WriteLine("---------------- Task2 Ended ----------------");
 
 
 
 
-            }
+        }
 
 
 
@@ -224,8 +243,5 @@ namespace TASK2
 
 
 
-            }
     }
-
-
-
+}
