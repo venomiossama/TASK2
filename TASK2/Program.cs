@@ -103,7 +103,7 @@ namespace TASK2
                                 sum += numbers[i];
                             }
                             mean = sum / countnum;
-                            Console.WriteLine($"The Mean Is {mean}");
+                            Console.WriteLine($"The Mean Is [ {mean} ]");
                         }
                         break;
 
@@ -123,7 +123,7 @@ namespace TASK2
                                     smallnum = numbers[i];
                                 }
                             }
-                            Console.WriteLine($"The Smallest Number Is {smallnum}");
+                            Console.WriteLine($"The Smallest Number Is [ {smallnum} ]");
                         }
 
                         break;
@@ -144,7 +144,7 @@ namespace TASK2
                                     largenum = numbers[i];
                                 }
                             }
-                            Console.WriteLine($"The Largest Number Is {largenum}");
+                            Console.WriteLine($"The Largest Number Is [ {largenum} ]");
                         }
                         break;
 
@@ -193,21 +193,21 @@ namespace TASK2
                         if (countnum == 0)
                         {
 
-                                Console.WriteLine("The List Is Empty!");
-                           
+                            Console.WriteLine("The List Is Empty!");
+
                         }
 
                         else
-                        { 
-                            bool oddnums = false;
-                        for (int i = 0; i < countnum; i++)
                         {
-                            if (numbers[i] % 2 != 0)
+                            bool oddnums = false;
+                            for (int i = 0; i < countnum; i++)
                             {
-                                Console.WriteLine($"[ {numbers[i]} ]");
+                                if (numbers[i] % 2 != 0)
+                                {
+                                    Console.WriteLine($"[ {numbers[i]} ]");
                                     oddnums = true;
+                                }
                             }
-                        }
                             if (!oddnums)
                             {
                                 Console.WriteLine("There Is No Odd Numbers!");
