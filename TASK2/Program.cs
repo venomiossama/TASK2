@@ -1,4 +1,4 @@
-﻿using System.Security.Cryptography;
+using System.Security.Cryptography;
 using System.Threading.Channels;
 
 namespace TASK2
@@ -10,13 +10,12 @@ namespace TASK2
             int[] numbers = new int[100];
             int countnum = 0;
             int newnum = 0;
+            int smallnum = 0;
+            int largenum = 0;
+            double mean = 0.0;
             char[] chars = { 'P', 'A', 'M', 'S', 'L', 'F', 'C', 'Q' };
             char user;
             bool check; // this is for check duplicated entries
-            int avrage = 0;
-            double mean = 0;
-            int smallnum = 0;
-            int largenum = 0;
             bool find = false;
             // bonus: Dont allow duplicate entries
             // bonus: new shortcut <B>
@@ -38,7 +37,8 @@ namespace TASK2
                 Console.WriteLine("C - Clear The List");
                 Console.WriteLine("B - Print Odd Numbers");
                 Console.WriteLine("Q - Quit");
-               user = char.ToUpper(Convert.ToChar(Console.ReadLine()));
+                user = char.ToUpper(Console.ReadKey().KeyChar);
+                Console.WriteLine(); 
 
 
                 switch (user)
@@ -157,6 +157,7 @@ namespace TASK2
                         Console.WriteLine("Enter a Number You Want to Search for!");
                         int findnum = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("The Number Is Exist!");
+                            find = false;
                             for (int i = 0;i < countnum;i++)
                             {
                                 if(numbers[i] == findnum)
